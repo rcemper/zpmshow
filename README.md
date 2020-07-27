@@ -27,13 +27,13 @@ USER>d ^zpmshow
   5  bondar-nav                        1.0.1   -- no descripition --
   6  cache-fast-json                   1.0.3  produce pretty JSON output for
                                               Cache + Ensemble
-  7  classexplorer                     1.21.3  -- no descripition --
-  8  contest-rest-template             1.0.3   -- no descripition --
-  9  csvgen                            1.1.6   -- no descripition --
- 10  declarative-os                    1.0.2   -- no descripition --
- 11  delete-helper                     1.0.1   -- no descripition --
+  7  classexplorer                     1.21.3  -- no description --
+  8  contest-rest-template             1.0.3   -- no description --
+  9  csvgen                            1.1.6   -- no description --
+ 10  declarative-os                    1.0.2   -- no description --
+ 11  delete-helper                     1.0.1   -- no description --
  12  document-template                 1.0.0   -- not github --
- 13  dsw                               2.1.51  -- no descripition --
+ 13  dsw                               2.1.51  -- no description --
  14  ecp-job                           1.0.1  Multi-Line in Terminal Command
  15  excel-light                       1.0.0  Light weight Excel download
 
@@ -56,16 +56,16 @@ zpm install cache-fast-json
 [cache-fast-json]       Activate SUCCESS
 
   1  analyzethis                       1.1.4   -- not github --
-  2  apps.rest                         1.0.0   -- no descripition --
+  2  apps.rest                         1.0.0   -- no description --
   3  bitmap-adoption                   1.0.3  Bitmaps for nonstandard IDs
   4  blocksexplorer                    2.2.1   -- not github --
-  5  bondar-nav                        1.0.1   -- no descripition --
+  5  bondar-nav                        1.0.1   -- no description --
   6  cache-fast-json                   1.0.3  produce pretty JSON output for
                                               Cache + Ensemble
-  7  classexplorer                     1.21.3  -- no descripition --
-  8  contest-rest-template             1.0.3   -- no descripition --
-  9  csvgen                            1.1.6   -- no descripition --
- 10  declarative-os                    1.0.2   -- no descripition --
- 11  delete-helper                     1.0.1   -- no descripition --
+  7  classexplorer                     1.21.3  -- no description --
+  8  contest-rest-template             1.0.3   -- no description --
+  9  csvgen                            1.1.6   -- no description --
+ 10  declarative-os                    1.0.2   -- no description --
+ 11  delete-helper                     1.0.1   -- no description --
 
 ~~~
