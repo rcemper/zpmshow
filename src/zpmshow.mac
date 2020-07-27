@@ -26,7 +26,7 @@ do() public {
 	for i=1:1:$$$rcc {
 		do show(i)
 		if '(i#15) {
-ac			write !!,"action (i[nstall),u[ninstall],n[ext],b[back],q[quit]):" read ac#1
+ac			write !!,"action (i[nstall),u[ninstall],n[ext],b[ack],q[uit]):" read ac#1
 			set ac=$zcvt(ac,"L")
 			if ac="q" return 
 			if (ac="")||(ac="n") continue
