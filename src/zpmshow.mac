@@ -1,0 +1,100 @@
+ROUTINE zmpshow
+zpmshow ;  lazy search and (un)install helper for zpm
+	do do()
+	quit 
+#define rcc ^||rcc
+do() public {
+	set sql="select $listbuild(Name,Version,Repo) "
+			_"from %ZPM_PackageManager_Developer.Utils_GetModuleList('registry')"
+		,rs=##class(%ResultSet).%New()
+		,sc=rs.Prepare(sql)
+	set:sc sc=rs.Execute()
+	if sc {
+		kill $$$rcc
+		set namlen=0
+		for i=1:1 {
+			quit:'rs.%Next()  
+			set lin=rs.GetData(1)
+				,tab1=$l($li(lin))
+				,$$$rcc($i($$$rcc))=lin
+			set:tab1>namlen namlen=tab1
+			}
+		}
+	else { zw  zw $$$rcc b }
+	set %req=$$https()
+		,%nammax=namlen
+	for i=1:1:$$$rcc {
+		do show(i)
+		if '(i#15) {
+ac			write !!,"action (i[nstall),u[ninstall],n[ext],b[back],q[quit]):" read ac#1
+			set ac=$zcvt(ac,"L")
+			if ac="q" return 
+			if (ac="")||(ac="n") continue
+bk			if ac="b" {
+				set i=i-15 
+				if i<1 continue 
+				do show(i) goto ac
+				}
+			if "ui"[ac {
+				read "  package number: ",nb
+				if 'nb goto ac
+				if $d($$$rcc(+nb)) {
+					do show(nb)
+					read !,"   OK (y,n): ",ok#1
+					if "Nn"[ok {
+						goto ac
+					} else  {
+						set cmd=$s(ac="u":"un",1:"")_"install "_$li($$$rcc(nb))
+						write !,"zpm "_cmd,! 
+						zpm cmd
+						write ! set ac="b" goto bk
+						}
+				} else { 
+					set ac="b" goto bk 
+				}
+			} 	
+		} 
+	}	
+	quit	
+}
+show(ln,&namlen) {
+		set lin=$g($$$rcc(ln))
+			,desc=$lg(lin,4)
+		if desc="" {
+			set desc=$$desc($li(lin,3))
+				,$$$rcc(ln)=lin_$lb(desc)
+			}
+		write !,$j(ln,3),?5,$li(lin),?(6+%nammax),$li(lin,2),?(13+%nammax)
+		set dx=$x
+ 		for d=1:1:$L(desc," ") {
+	 		set wd=$P(desc," ",d) 
+			if $x+$l(wd)>80 write !,?dx
+			write wd," " 
+		}
+	quit
+}	
+
+https() {
+	set req=##class(%Net.HttpRequest).%New()
+		,req.SSLConfiguration="pm.community.intersystems.com"
+		,req.Https=1
+		,req.Server="raw.githubusercontent.com"
+		,req.Port=443
+	quit req	
+
+	}			
+desc(url) {
+	set url=$p(url,"/github.com",2)
+	if url="" quit " -- not github --"
+	set:$e(url,*)'="/" url=url_"/"
+	set url=url_"master/module.xml"
+		,sc=%req.Get(url)
+	if 'sc quit " -- no response --"
+#dim res as %Net.HttpResponse
+	set res=%req.HttpResponse
+	if res.StatusCode-200 quit " --no module.xml --"
+	set mod=res.Data.Read()
+		,desc=$p($p(mod,"Description>",2),"</")
+	if desc="" quit " -- no descripition --"
+	quit desc
+	}	
