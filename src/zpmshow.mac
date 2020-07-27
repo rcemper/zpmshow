@@ -95,6 +95,6 @@ desc(url) {
 	if res.StatusCode-200 quit " --no module.xml --"
 	set mod=res.Data.Read()
 		,desc=$p($p(mod,"Description>",2),"</")
-	if desc="" quit " -- no descripition --"
+	if desc="" quit " -- no description --"
 	quit desc
 	}	
