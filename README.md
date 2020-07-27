@@ -10,9 +10,9 @@ also hard to type with my lazy fingers.
 So I decided to have   
 - a listing with the __descriptions__ from repository,   
 - splitted in short junks to avoid backscroll,   
-- controlled forward / backward scolling,     
+- controlled forward / backward scrolling,     
 - the option to select my modules by __number__,   
-- to install or uninstal with limited typing.  
+- to install or uninstall with limited typing.  
 
 It runs with __do ^zpmshow__
 
