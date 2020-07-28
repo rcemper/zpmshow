@@ -1,4 +1,4 @@
-ROUTINE zmpshow
+ROUTINE zpmshow
 zpmshow ;  lazy search and (un)install helper for zpm
 	do do()
 	quit 
