@@ -70,3 +70,5 @@ zpm install cache-fast-json
  11  delete-helper                     1.0.1   -- no description --
 
 ~~~
+
+[Article in DC](https://community.intersystems.com/post/zpmshow-helper-tired-fingers)
