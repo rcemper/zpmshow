@@ -72,4 +72,4 @@ zpm install cache-fast-json
 ~~~
 
 [Article in DC](https://community.intersystems.com/post/zpmshow-helper-tired-fingers)
-   [Video](https://youtu.be/T9D5CiLwu9o) 
+ - - - - [Video](https://youtu.be/T9D5CiLwu9o) 
