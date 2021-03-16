@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+a<?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
   <Document name="zpmshow.ZPM">
     <Module>
       <Name>zpmshow</Name>
-      <Version>1.0.1</Version>
-      <Description>Helper to List, Install, Uninstall ZPM packages</Description>
+      <Version>1.0.2</Version>
+      <Description>Helper to Search, Install, Uninstall ZPM packages</Description>
       <Keywords>ZPM, Terminal, COS</Keywords>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
